@@ -1,4 +1,5 @@
-DB_PATH = 'changelog.db'  # this is the db created by setup.sh; be sure to keep this and the actual db name in sync
+import os
+DB_PATH = os.getenv('STACKATO_FILESYSTEM') + '/changelog.db'  # this is the db created by setup.sh; be sure to keep this and the actual db name in sync
 LISTEN_HOST = "127.0.0.1"
 LISTEN_PORT = 5000
 
@@ -7,7 +8,6 @@ USE_SENTRY = False
 SENTRY_DSN = None
 
 # Loading site-specific override settings
-import os
 extra_settings_path = os.getenv('CHANGELOG_SETTINGS_PATH')
 if extra_settings_path is not None:
     try:
