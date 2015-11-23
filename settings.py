@@ -1,5 +1,4 @@
-import os
-DB_PATH = os.getenv('STACKATO_FILESYSTEM') + '/changelog.db'  # this is the db created by setup.sh; be sure to keep this and the actual db name in sync
+ALCHEMY_URL = 'sqlite:///changelog.db' #Any valid SQLAlchemy connection string.
 LISTEN_HOST = "127.0.0.1"
 LISTEN_PORT = 5000
 
